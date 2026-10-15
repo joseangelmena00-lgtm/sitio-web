@@ -13,7 +13,7 @@ import contenido as B
 TITLE = "M&G Consultoría Legal | Abogados en materia condominal, administrativa y civil en Edomex y CDMX"
 DESC = ("Despacho de abogados especializado en materia condominal, administrativa y civil. "
         "Auditoría condominal, recuperación de cartera, asambleas, juicios y trámites en el Estado de México "
-        "y la CDMX. Primera asesoría sin costo.")
+        "y la CDMX, con disponibilidad en otras entidades de la República. Primera asesoría sin costo.")
 
 # Las imágenes del sitio viven en assets/ (las genera preparar_imagenes.py).
 
@@ -65,9 +65,8 @@ ld = {
     "telephone": "+525633390183",
     "email": B.MAIL,
     "description": DESC,
-    "address": {"@type": "PostalAddress", "addressLocality": "Cuautitlán Izcalli",
-                "addressRegion": "Estado de México", "addressCountry": "MX"},
-    "areaServed": ["Estado de México", "Ciudad de México"],
+    "address": {"@type": "PostalAddress", "addressCountry": "MX"},
+    "areaServed": ["Estado de México", "Ciudad de México", "México"],
     "founder": {"@type": "Person", "name": "José Ángel Mena Galván", "jobTitle": "Licenciado en Derecho"},
     "knowsAbout": ["Derecho condominal", "Derecho administrativo", "Derecho civil", "Arrendamiento",
                    "Recuperación de cartera condominal"],

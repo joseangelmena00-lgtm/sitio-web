@@ -483,7 +483,7 @@ def build():
       <div>
         <p class="eyebrow">Consultoría especializada</p>
         <h1>Abogados expertos en materia <span>condominal, administrativa y civil.</span></h1>
-        <p class="lead">Acompañamos a administradores, comités, propietarios y empresas del Estado de México y la CDMX para resolver sus conflictos legales y mantener todo en regla, con lenguaje claro y costos definidos.</p>
+        <p class="lead">Acompañamos a administradores, comités, propietarios y empresas en todo el Estado de México y la CDMX, y atendemos asuntos en otras entidades de la República. Resolvemos sus conflictos legales y mantenemos todo en regla, con lenguaje claro y costos definidos.</p>
         <ul class="pillars"><li>Condominal</li><li>Administrativa</li><li>Civil</li></ul>
         <div class="cta-row">
           <a class="btn btn-gold" href="{cta_general}" target="_blank" rel="noopener">Agenda tu primera asesoría sin costo</a>
@@ -501,7 +501,7 @@ def build():
   <section class="trust" aria-label="Datos del despacho">
     <div class="wrap">
       <div><b>+6 años de experiencia</b><span>En materia condominal y administrativa</span></div>
-      <div><b>Todo el Edomex y la CDMX</b><span>Atención presencial y a distancia</span></div>
+      <div><b>Todo el Edomex y la CDMX</b><span>Y disponibilidad en otras entidades de la República</span></div>
       <div><b>Primera asesoría sin costo</b><span>Conoce cómo trabajamos antes de decidir</span></div>
     </div>
   </section>
@@ -538,7 +538,7 @@ def build():
         <div class="facts">
           <div><b>+6</b><span>años de experiencia</span></div>
           <div><b>3</b><span>especialidades</span></div>
-          <div><b>2</b><span>entidades: Edomex y CDMX</span></div>
+          <div><b>Nacional</b><span>Edomex, CDMX y otras entidades</span></div>
         </div>
       </div>
     </div>
@@ -557,7 +557,8 @@ def build():
             <div><span>Teléfonos</span><b>56 3339 0183 · {TEL2}</b></div>
             <div><span>Correo</span><b>{MAIL}</b></div>
             <div><span>Cobertura</span><b>Todo el Estado de México y la CDMX</b></div>
-            <div><span>Oficina</span><b>Cuautitlán Izcalli, Estado de México</b></div>
+            <div><span>Otras entidades</span><b>Disponibilidad en toda la República</b></div>
+            <div><span>Modalidad</span><b>Presencial y a distancia</b></div>
           </div>
         </div>
       </div>
