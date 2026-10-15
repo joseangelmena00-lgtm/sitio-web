@@ -6,6 +6,11 @@ import html
 WA = "525633390183"
 TEL2 = "55 7829 5140"
 MAIL = "lic.angelmena@mgconsultorialegal.com.mx"
+FACEBOOK = "https://www.facebook.com/profile.php?id=61579069425314"
+TIKTOK = "https://www.tiktok.com/@myg.consultorialegal"
+FB_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21z"/></svg>'
+TT_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 3c.3 2.2 1.6 3.6 3.9 3.8v2.6c-1.4.1-2.6-.3-3.9-1.1v5.3c0 6.6-7.2 8.6-10.1 3.9-1.9-3-.7-8.3 5.3-8.5v2.8c-.5.1-.9.2-1.4.3-1.4.5-2.2 1.4-2 3 .4 3 6 3.9 5.5-2V3z"/></svg>'
+
 DOMINIO = "mgconsultorialegal.com.mx"
 
 
@@ -457,6 +462,12 @@ CSS = """
   footer .wrap{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center}
   footer .logo-l,footer .logo-d{height:34px}
   footer p{max-width:70ch;line-height:1.55}
+  .social{display:flex;gap:10px;flex-wrap:wrap}
+  .social a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:.86rem;border:1px solid var(--line);border-radius:8px;padding:8px 12px;color:var(--ink)}
+  .social a:hover{border-color:var(--gold)}
+  .social svg{width:18px;height:18px}
+  .data .social a{color:var(--on-navy);border-color:rgba(255,255,255,.25)}
+  .data .social a:hover{border-color:var(--gold)}
 """
 
 GOOGLE_PERFIL = "https://share.google/5sOMgyYVFmGWyNpgD"
@@ -495,6 +506,9 @@ def build():
         f'<div class="step"><div class="n">{i}</div><h3>{e(t)}</h3><p>{e(d)}</p></div>'
         for i, (t, d) in enumerate(PROCESO, 1)
     )
+    redes = (f'<div class="social">'
+             f'<a href="{FACEBOOK}" target="_blank" rel="noopener" aria-label="M&amp;G en Facebook">{FB_SVG}Facebook</a>'
+             f'<a href="{TIKTOK}" target="_blank" rel="noopener" aria-label="M&amp;G en TikTok">{TT_SVG}TikTok</a></div>')
     cta_general = wa("Hola, me gustaría agendar mi primera asesoría sin costo.")
     page = f"""<title>M&amp;G Consultoría Legal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -610,6 +624,7 @@ def build():
             <div><span>Cobertura</span><b>Todo el Estado de México y la CDMX</b></div>
             <div><span>Otras entidades</span><b>Disponibilidad en toda la República</b></div>
             <div><span>Modalidad</span><b>Presencial y a distancia</b></div>
+            <div><span>Síguenos</span>{redes}</div>
           </div>
         </div>
       </div>
@@ -620,6 +635,7 @@ def build():
 <footer>
   <div class="wrap">
     <a href="#inicio" aria-label="M&amp;G Consultoría Legal">{logo}</a>
+    {redes}
     <p>Lic. José Ángel Mena Galván. La información de este sitio es de carácter general y no constituye asesoría legal para un caso concreto; para ello, agenda una consulta. © <span id="y">2026</span> M&amp;G Consultoría Legal. Todos los derechos reservados.</p>
   </div>
 </footer>
