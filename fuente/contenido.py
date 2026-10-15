@@ -8,6 +8,8 @@ TEL2 = "55 7829 5140"
 MAIL = "lic.angelmena@mgconsultorialegal.com.mx"
 FACEBOOK = "https://www.facebook.com/profile.php?id=61579069425314"
 TIKTOK = "https://www.tiktok.com/@myg.consultorialegal"
+LINKEDIN = "https://www.linkedin.com/in/jos%C3%A9-%C3%A1ngel-mena-galv%C3%A1n-0b87492a8/"
+LI_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-4.95c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4z"/></svg>'
 FB_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21z"/></svg>'
 TT_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.6 3c.3 2.2 1.6 3.6 3.9 3.8v2.6c-1.4.1-2.6-.3-3.9-1.1v5.3c0 6.6-7.2 8.6-10.1 3.9-1.9-3-.7-8.3 5.3-8.5v2.8c-.5.1-.9.2-1.4.3-1.4.5-2.2 1.4-2 3 .4 3 6 3.9 5.5-2V3z"/></svg>'
 
@@ -508,7 +510,8 @@ def build():
     )
     redes = (f'<div class="social">'
              f'<a href="{FACEBOOK}" target="_blank" rel="noopener" aria-label="M&amp;G en Facebook">{FB_SVG}Facebook</a>'
-             f'<a href="{TIKTOK}" target="_blank" rel="noopener" aria-label="M&amp;G en TikTok">{TT_SVG}TikTok</a></div>')
+             f'<a href="{TIKTOK}" target="_blank" rel="noopener" aria-label="M&amp;G en TikTok">{TT_SVG}TikTok</a>'
+             f'<a href="{LINKEDIN}" target="_blank" rel="noopener" aria-label="Lic. José Ángel Mena Galván en LinkedIn">{LI_SVG}LinkedIn</a></div>')
     cta_general = wa("Hola, me gustaría agendar mi primera asesoría sin costo.")
     page = f"""<title>M&amp;G Consultoría Legal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">

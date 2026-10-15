@@ -68,7 +68,7 @@ ld = {
     "address": {"@type": "PostalAddress", "addressCountry": "MX"},
     "areaServed": ["Estado de México", "Ciudad de México", "México"],
     "sameAs": [B.FACEBOOK, B.TIKTOK, B.GOOGLE_PERFIL],
-    "founder": {"@type": "Person", "name": "José Ángel Mena Galván", "jobTitle": "Licenciado en Derecho"},
+    "founder": {"@type": "Person", "name": "José Ángel Mena Galván", "jobTitle": "Licenciado en Derecho", "sameAs": [B.LINKEDIN]},
     "knowsAbout": ["Derecho condominal", "Derecho administrativo", "Derecho civil", "Arrendamiento",
                    "Recuperación de cartera condominal"],
 }
