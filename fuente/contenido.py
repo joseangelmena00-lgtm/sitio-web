@@ -414,6 +414,23 @@ CSS = """
   .step h3{font-size:1.05rem;margin-bottom:6px}
   .step p{color:var(--muted);font-size:.92rem}
 
+  /* Opiniones */
+  .rating{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:14px}
+  .rating b{font-size:2rem;font-weight:800;line-height:1}
+  .stars{color:var(--gold);letter-spacing:2px;font-size:1.1rem}
+  .rating span{color:var(--muted);font-size:.9rem}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:980px){.reviews{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.reviews{grid-template-columns:1fr}}
+  .review{margin:0;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:22px 24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+  .review .stars{font-size:.95rem}
+  .review blockquote{margin:0;font-size:.95rem;line-height:1.6}
+  .review figcaption{margin-top:auto;display:flex;align-items:center;gap:10px;font-size:.86rem;color:var(--muted)}
+  .review figcaption b{color:var(--ink);font-weight:600}
+  .ini{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--gold);font-weight:700;font-size:.85rem}
+  .more{margin-top:24px}
+  .more a{font-weight:600;font-size:.92rem;text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px}
+
   /* El despacho */
   .about{display:grid;grid-template-columns:.8fr 1.3fr;gap:48px;align-items:center}
   @media (max-width:880px){.about{grid-template-columns:1fr;gap:28px}}
@@ -442,6 +459,21 @@ CSS = """
   footer p{max-width:70ch;line-height:1.55}
 """
 
+GOOGLE_PERFIL = "https://share.google/5sOMgyYVFmGWyNpgD"
+GOOGLE_RATING = "5.0"
+GOOGLE_TOTAL = 8
+
+# Opiniones reales del Perfil de Negocio de Google, copiadas tal cual (octubre 2026).
+# Se muestra nombre e inicial del apellido.
+OPINIONES = [
+    ("Beatriz B.", "Excelente servicio y atención profesional. La asesoría brindada fue clara, eficiente y de gran apoyo para resolver mis dudas. Trato amable, responsable y el compromiso demostrado durante todo el proceso. Sin duda, una consultoría altamente recomendable."),
+    ("Delia M.", "Excelente asesoría acciones acertadas y resoluciones definitivas recomendable 100% el costo justo a mis posibilidades."),
+    ("Verónica L.", "Asesorías muy profesionales y excelente guía con muy buenos resultados, muy recomendable"),
+    ("Gerard M.", "Servicio profesional con un trato muy amable. La asesoría jurídica en materia fue muy clara y eficiente."),
+    ("Alfredo G.", "Servicio profesional y pleno dominio en su materia, excelente atención Lic. Felicidades"),
+    ("Roberto F.", "Buen servicio profesionistas competentes y dedicados si lo recomendaria 🤝"),
+]
+
 PROCESO = [
     ("Asesoría sin costo", "Nos cuentas tu situación por WhatsApp o por teléfono. Escuchamos y te decimos qué opciones tienes, sin compromiso."),
     ("Cotización clara", "Te presentamos el alcance, los tiempos y los honorarios por escrito antes de empezar. Sabes qué contratas y cuánto cuesta."),
@@ -453,6 +485,12 @@ def build():
     logo_l = '<img class="logo-l" src="assets/logo-azul.png" alt="M&amp;G Consultoría Legal">'
     logo_d = '<img class="logo-d" src="assets/logo-blanco.png" alt="M&amp;G Consultoría Legal">'
     logo = logo_l + logo_d
+    resenas = "".join(
+        f'<figure class="review"><span class="stars" aria-label="5 de 5 estrellas">★★★★★</span>'
+        f'<blockquote>“{e(t)}”</blockquote>'
+        f'<figcaption><span class="ini" aria-hidden="true">{e(n[0])}</span><span><b>{e(n)}</b><br>Opinión en Google</span></figcaption></figure>'
+        for n, t in OPINIONES
+    )
     pasos = "".join(
         f'<div class="step"><div class="n">{i}</div><h3>{e(t)}</h3><p>{e(d)}</p></div>'
         for i, (t, d) in enumerate(PROCESO, 1)
@@ -470,6 +508,7 @@ def build():
     <nav class="nav-links">
       <a href="#servicios">Servicios</a>
       <a href="#proceso">Cómo trabajamos</a>
+      <a href="#opiniones">Opiniones</a>
       <a href="#despacho">El despacho</a>
       <a href="#contacto">Contacto</a>
       <a class="btn btn-gold" href="{cta_general}" target="_blank" rel="noopener">Asesoría sin costo</a>
@@ -527,7 +566,19 @@ def build():
     </div>
   </section>
 
-  <section id="despacho" class="band">
+  <section id="opiniones" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Opiniones de clientes</p>
+        <h2>Lo que dicen quienes ya confiaron en nosotros</h2>
+        <div class="rating"><b>{GOOGLE_RATING}</b><span class="stars" aria-label="5 de 5 estrellas">★★★★★</span><span>{GOOGLE_TOTAL} opiniones en Google</span></div>
+      </div>
+      <div class="reviews">{resenas}</div>
+      <p class="more"><a href="{GOOGLE_PERFIL}" target="_blank" rel="noopener">Ver todas las opiniones en Google →</a></p>
+    </div>
+  </section>
+
+  <section id="despacho" class="band alt">
     <div class="wrap about">
       <img src="assets/foto-lic-mena.jpg" alt="Lic. José Ángel Mena Galván, Licenciado en Derecho" loading="lazy">
       <div>
@@ -544,7 +595,7 @@ def build():
     </div>
   </section>
 
-  <section id="contacto" class="band alt">
+  <section id="contacto" class="band">
     <div class="wrap">
       <div class="final">
         <div class="grid">
