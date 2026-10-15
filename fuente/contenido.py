@@ -128,7 +128,7 @@ PANELES = [
                 "incluye": [
                     "Análisis del caso y de las pruebas",
                     "Elaboración y presentación de la demanda",
-                    "Juicio ordinario civil en el Distrito Judicial de Cuautitlán",
+                    "Juicio ordinario civil y ejecutivo civil",
                 ],
                 "precio": None,
             },
